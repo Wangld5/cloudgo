@@ -5,7 +5,7 @@ import "cloudgo/service"
 import "os"
 
 const (
-	PORT string = "8000"
+	PORT string = "8001"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 		port = PORT
 	}
 	//Define server port
-	flag.StringVarP(&port, "port", "p", "8000", "define server port")
+	flag.StringVarP(&port, "port", "p", "8001", "define server port")
 	flag.Parse()
 	server := service.NewServer()
 	server.Run(":" + port)
