@@ -10,12 +10,13 @@ const (
 
 func main() {
 	var port string
-	//Get predefined env port
+	//获得环境变量
 	port = os.Getenv("PORT")
+	//如果获得的环境变量不存在，则赋值PORT
 	if len(port) <= 0 {
 		port = PORT
 	}
-	//Define server port
+	//定义服务器端口
 	flag.StringVarP(&port, "port", "p", "8001", "define server port")
 	flag.Parse()
 	server := service.NewServer()
