@@ -16,6 +16,7 @@ func NewServer() *negroni.Negroni {
 	})
 	//创建一个路由
 	r := mux.NewRouter()
+	//Classic()返回一个Negroni实例(会添加异常恢复,日志和静态文件服务器三个中间件)
 	server := negroni.Classic()
 	//初始化路由
 	initRouter(r, formatter)
